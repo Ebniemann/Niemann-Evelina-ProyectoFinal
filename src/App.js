@@ -5,8 +5,12 @@ import ItemList from "./component/ItemList/ItemList";
 function App() {
   return (
     <>
-      <NavBar />
-      <ItemList />
+      <header>
+        <NavBar />
+      </header>
+      <body>
+        <ItemList greeting={"Carreras"} />
+      </body>
     </>
   );
 }
