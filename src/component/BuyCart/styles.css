@@ -1,0 +1,11 @@
+.cart-container{
+  display: flex;
+}
+
+.cart-container p{
+  margin: 0;
+}
+
+.cart-container p{
+  color: yellow;
+}
