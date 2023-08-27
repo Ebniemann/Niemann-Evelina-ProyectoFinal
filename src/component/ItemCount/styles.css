@@ -1,7 +1,11 @@
-.buttonAdd {
+.buyCourse{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 7px 0px 7px;
+}
+.buttonAdd{
   text-decoration: none;
   background-color: yellow;
-  margin-right: 3px;
   border: 1px solid yellow;
   border-radius: 5px;
   color: rgb(46, 46, 46);
@@ -9,10 +13,26 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+.quantityAction {
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid white;
+  padding: 0;
+  width: 10px;
+  color: rgb(46, 46, 46);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'PT Sans', sans-serif;
+
+}
+
 .quantity{
   display: flex;
+  align-items: center;
 }
 
 .quantity p{
-  margin-bottom: 0;
+  font-size: 20px;
+  margin: 0px 10px 0px 10px;
+
 }

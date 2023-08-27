@@ -40,7 +40,7 @@ const ItemCount = ({ initial, stock, productAdd }) => {
 
   return (
     <>
-      <div>
+      <div className="buyCourse">
         <button
           className="buttonAdd"
           onClick={() => productAdd(quantity)}
@@ -49,11 +49,11 @@ const ItemCount = ({ initial, stock, productAdd }) => {
           Agregar al carrito
         </button>
         <div className="quantity">
-          <button className="buttonAdd" onClick={decrement}>
+          <button className="quantityAction" onClick={decrement}>
             -
           </button>
           <p>{quantity}</p>
-          <button className="buttonAdd" onClick={increment}>
+          <button className="quantityAction" onClick={increment}>
             +
           </button>
         </div>
