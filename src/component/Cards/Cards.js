@@ -5,19 +5,25 @@ import { useEffect, useState } from "react";
 
 const Card = () => {
   const [course, setCourse] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const resquetCourses = () => {
     return new Promise((resolve) => {
-      resolve(data);
+      setTimeout(() => {
+        return resolve(data);
+      }, 3000);
     });
   };
 
   useEffect(() => {
-    resquetCourses().then((c) => {
-      setCourse(c);
-    });
+    setLoading(true);
+    resquetCourses()
+      .then((c) => {
+        setCourse(c);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
-  return <ItemCards course={course} />;
+  return <ItemCards course={course} loading={false} />;
 };
 export default Card;

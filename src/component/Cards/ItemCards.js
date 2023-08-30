@@ -6,7 +6,7 @@ const ItemCards = ({ course }) => {
       <section className="cards">
         {course.length > 0 &&
           course.map((courses) => {
-            return <Item courses={courses} />;
+            return <Item key={courses.id} courses={courses} />;
           })}
       </section>
     </>

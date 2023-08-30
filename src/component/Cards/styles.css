@@ -10,7 +10,9 @@
 .card-body{
   padding-bottom: 0px;
 }
-.card-text{
+.card-list{
+  display: flex;
+  flex-direction: column;
   height: 100px;
   margin: 0;
 }
@@ -19,3 +21,5 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+
