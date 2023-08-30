@@ -1,0 +1,40 @@
+
+
+ [
+    {
+      "id": 1,
+      "name": "Product Web",
+      "price": 1000,
+      "amount": 1,
+      "number_courses": 3,
+      "course_list": ["Product Manager", "Diseño UX/UI", "Desarrollo Web"],
+      "number_weeks": 31
+    },
+    {
+      "id": 2,
+      "name": "Product",
+      "price": 2000,
+      "amount": 1,
+      "number_courses": 2,
+      "course_list": ["Product Manager", "E-commerce"],
+      "number_weeks": 16
+    },
+    {
+      "id": 3,
+      "name": "Desarrollo de aplicaciones",
+      "price": 3000,
+      "amount": 1,
+      "number_courses": 4,
+      "course_list": ["Desarrollo Web", "JavaScript", "React Js", "Desarrollo de Aplicaciones"],
+      "number_weeks": 35
+    },
+    {
+      "id": 4,
+      "name": "Desarrollo Full Stack",
+      "price": 4000,
+      "amount": 1,
+      "number_courses": 4,
+      "course_list": ["Desarrollo Web", "JavaScript", "React Js", "Programación Backend"],
+      "number_weeks": 50
+    }
+  ]
