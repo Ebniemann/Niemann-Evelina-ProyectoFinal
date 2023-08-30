@@ -1,5 +1,5 @@
-import "./styles.css";
 import ItemCards from "./ItemCards";
+import Loading from "../Loading/Loading";
 import data from "../../data/data.json";
 import { useEffect, useState } from "react";
 
@@ -24,6 +24,6 @@ const Card = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return <ItemCards course={course} loading={false} />;
+  return loading ? <Loading /> : <ItemCards course={course} loading={false} />;
 };
 export default Card;
