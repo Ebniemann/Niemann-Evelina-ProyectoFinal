@@ -11,3 +11,73 @@
 img{
   border-radius: 5px 0px 0px 5px;
 }
+
+
+.modality {
+  grid-column: 1/17;
+  position: relative;
+  padding: 75px 0px;
+  color: black;
+  background: white;
+  background-image: url(https://assets.soyhenry.com/henry-landing/assets/shapes/shapesHowApply.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+  h2 {
+    color: black;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .subrayado {
+    background-color: yellow;
+    height: 16px;
+    position: absolute;
+    top: 135px;
+    right: 415px;
+    z-index: 1;
+    width: 580px;
+    margin: auto;
+  }
+
+  .times {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    font-family: 'PT Sans', sans-serif;
+    position: relative;
+    margin-bottom: 75px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    z-index: 2;
+  }
+
+  .modality-time {
+    flex-direction: column;
+    width: 35%;
+    padding: 0px 12px;
+    border-radius: 5px;
+  }
+
+    h4 {
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    p {
+      font-family: Roboto;
+      font-weight: 100;
+      font-size: 25px;
+      font-weight: 100;
+      letter-spacing: 0;
+      margin-bottom: 0;
+    }
+  

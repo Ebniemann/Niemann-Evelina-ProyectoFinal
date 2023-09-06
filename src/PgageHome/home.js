@@ -1,8 +1,7 @@
 import Title from "../component/Title/Title";
 import SubTitle from "../component/SubTitle/SubTitle";
 import ImgHome from "../Assest/img/Img-presentation/inicio.jpg";
-import ItemList from "../component/ItemListContainer/ItemListContainer";
-import { ToastContainer } from "react-toastify";
+
 import Layout from "../component/Layout/Layout";
 import "./styles.css";
 
@@ -11,17 +10,36 @@ const Home = () => {
     <Layout>
       <section className="presentation">
         <div className="description">
-          <Title text={"Únete a nuestra comunidad y reescribe tu futuro"} />
+          <Title text={"Invertimos en tu educación"} />
           <SubTitle
-            text={
-              "Vas a aprender cómo conectar tu aprendizaje con proyectos reales para que puedas comenzar a tener impacto en un trabajo desde el primer día."
-            }
+            text={`Una plataforma de aprendizaje donde puedes desarrollar\ntus habilidades y adaptarte al futuro profesional.\nDespega tu carrera en tecnología. Estudia a remoto y de manera intensiva.`}
           />
         </div>
-        <img src={ImgHome} alt="imagen Home" width={500} height={500}></img>
+        <img src={ImgHome} alt="imagen Home" width={500} height={500} />
       </section>
-      <ItemList greeting={"Carreras"} />
-      <ToastContainer />
+      <section class="modality">
+        <h2>Elige tu carrera</h2>
+        <p>¿ Full o Part ?</p>
+        <div class="subrayado"></div>
+        <div class="times">
+          <div class="modality-time">
+            <h4>Full-time</h4>
+            <p>
+              Es la modalidad ideal para quienes quieren empezar una carrera en
+              tecnología en muy poco tiempo. Estudia 8 horas diaras con clases
+              100% a remoto y en vivo.
+            </p>
+          </div>
+          <div class="modality-time">
+            <h4>Part-time</h4>
+            <p>
+              Diseñada exclusivamente para aquellos que quieren aprender
+              programación mientras trabajan. Estudia 3 horas por día con clases
+              100% a remoto y en vivo.
+            </p>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
