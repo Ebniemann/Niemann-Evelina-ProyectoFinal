@@ -1,12 +1,14 @@
 import "./styles.css";
 import Layout from "../component/Layout/Layout";
+import Title from "../component/Title/Title";
+import Form from "../component/Form/Form";
 
 const Faqs = () => {
   return (
     <Layout>
-      <div class="container-content">
+      <div className="faqsContainer">
         <div class="accordion" id="accordionExample">
-          <h1>Preguntas frecuentes</h1>
+          <Title text={"Preguntas frecuentes"} />
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button
@@ -89,44 +91,7 @@ const Faqs = () => {
             </div>
           </div>
         </div>
-
-        <form class="contact" id="contacto">
-          <h2>Contáctenos</h2>
-          <div class="mb-3">
-            <label for="name" class="form-label">
-              Nombre
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Evelina Niemann"
-            />
-            <span id="input_name"></span>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="name@example.com"
-            />
-            <span id="input_email"></span>
-          </div>
-          <div class="mb-3">
-            <label for="text-area" class="form-label">
-              Consulta
-            </label>
-            <textarea class="form-control" id="text-area" rows="3"></textarea>
-            <span id="input_text"></span>
-          </div>
-          <button class="button" type="button" id="btn-form">
-            Enviar
-          </button>
-        </form>
+        <Form />
       </div>
     </Layout>
   );
