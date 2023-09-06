@@ -1,17 +1,19 @@
 import "./App.css";
-import NavBar from "./component/NavBar/NavBar";
-import ItemList from "./component/ItemListContainer/ItemListContainer";
-import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./PgageHome/home";
 
 function App() {
   return (
     <>
-      <header>
-        <NavBar />
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route />
+          <Route />
+          <Route />
+        </Routes>
+      </BrowserRouter>
       <body>
-        <ItemList greeting={"Carreras"} />
-        <ToastContainer />
+        <Home />
       </body>
     </>
   );
