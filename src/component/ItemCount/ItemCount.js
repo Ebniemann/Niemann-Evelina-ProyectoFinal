@@ -3,13 +3,13 @@ import "./styles.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ItemCount = ({ initial, stock, productAdd }) => {
+const ItemCount = ({ initial, stock, productAdd, courseName }) => {
   const [quantity, setQuantity] = useState(initial);
 
   const increment = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
-      toast("Sumo un curso", {
+      toast(`Sumaste el curso ${courseName}`, {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: true,
@@ -24,7 +24,7 @@ const ItemCount = ({ initial, stock, productAdd }) => {
   const decrement = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
-      toast("Resto un curso", {
+      toast(`Restaste curso ${courseName}`, {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: true,

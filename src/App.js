@@ -1,6 +1,6 @@
 import "./App.css";
 import NavBar from "./component/NavBar/NavBar";
-import ItemList from "./component/ItemList/ItemList";
+import ItemList from "./component/ItemListContainer/ItemListContainer";
 import { ToastContainer } from "react-toastify";
 
 function App() {
