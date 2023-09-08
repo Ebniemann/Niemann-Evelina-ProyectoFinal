@@ -1,19 +1,27 @@
-import Products from "../ProductsContainer/ProductsContainer";
+import "./styles.css";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemList = ({ selectProduct, setSelectProduct, courses }) => {
-  function handleShow(courses) {
-    setSelectProduct(courses);
-  }
+const ItemList = ({ courses }) => {
   return (
-    <div className="cards">
-      {courses.map((courses) => (
-        <div className="card" key={courses.id}>
-          <div className="card-header">{courses.name}</div>
-          <button onClick={() => handleShow(courses)}>Detalle</button>
-          {selectProduct === courses && <Products courses={selectProduct} />}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="itemList">
+        {courses.map((course) => (
+          <div className="box-card" key={course.id}>
+            <div className="card-header">{course.name}</div>
+            <Link to={`/cursos/${course.id}`}>Ver carrera</Link>
+            <ItemCount
+              initial={1}
+              stock={3}
+              productAdd={(quantity) =>
+                console.log("producto agregado", quantity)
+              }
+              courseName={course.name}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

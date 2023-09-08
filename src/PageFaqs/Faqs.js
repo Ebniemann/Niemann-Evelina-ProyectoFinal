@@ -7,12 +7,12 @@ const Faqs = () => {
   return (
     <Layout>
       <div className="faqsContainer">
-        <div class="accordion" id="accordionExample">
+        <div className="accordion" id="accordionExample">
           <Title text={"Preguntas frecuentes"} />
-          <div class="accordion-item">
-            <h2 class="accordion-header">
+          <div className="accordion-item">
+            <h2 className="accordion-header">
               <button
-                class="accordion-button"
+                className="accordion-button"
                 type=""
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
@@ -24,20 +24,20 @@ const Faqs = () => {
             </h2>
             <div
               id="collapseOne"
-              class="accordion-collapse collapse show"
+              className="accordion-collapse collapse show"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <strong></strong> Podés pagar con tarjeta de crédito o débito a
                 través de Mercado Pago, con dinero en cuenta de Mercado Pago o
                 hacer una transferencia bancaria.
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
+          <div className="accordion-item">
+            <h2 className="accordion-header">
               <button
-                class="accordion-button collapsed"
+                className="accordion-button collapsed"
                 type=""
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
@@ -49,10 +49,10 @@ const Faqs = () => {
             </h2>
             <div
               id="collapseTwo"
-              class="accordion-collapse collapse"
+              className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <strong></strong>
                 Los programas de cada una de las carreras de E-task son
                 cocreados con empresas líderes en innovación de Latinoamérica
@@ -63,10 +63,10 @@ const Faqs = () => {
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
+          <div className="accordion-item">
+            <h2 className="accordion-header">
               <button
-                class="accordion-button collapsed"
+                className="accordion-button collapsed"
                 type=""
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseThree"
@@ -78,10 +78,10 @@ const Faqs = () => {
             </h2>
             <div
               id="collapseThree"
-              class="accordion-collapse collapse"
+              className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body">
+              <div className="accordion-body">
                 <strong></strong> Al estudiar Full Stack puedes convertirte en
                 uno de los profesionales en tecnología más demandados por las
                 compañías. Este perfil cuenta con una faceta muy completa y

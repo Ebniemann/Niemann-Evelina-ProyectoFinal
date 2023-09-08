@@ -9,8 +9,8 @@ import { ToastContainer } from "react-toastify";
 const CoursesPage = () => {
   return (
     <Layout>
-      <section class="presentation">
-        <div class="description">
+      <section className="presentation">
+        <div className="description">
           <Title text={"Únete a nuestra comunidad y reescribe tu futuro"} />
           <SubTitle
             text={

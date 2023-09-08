@@ -17,12 +17,12 @@ const Home = () => {
         </div>
         <img src={ImgHome} alt="imagen Home" width={500} height={500} />
       </section>
-      <section class="modality">
+      <section className="modality">
         <h2>Elige tu carrera</h2>
         <p>¿ Full o Part ?</p>
-        <div class="subrayado"></div>
-        <div class="times">
-          <div class="modality-time">
+        <div className="subrayado"></div>
+        <div className="times">
+          <div className="modality-time">
             <h4>Full-time</h4>
             <p>
               Es la modalidad ideal para quienes quieren empezar una carrera en
@@ -30,7 +30,7 @@ const Home = () => {
               100% a remoto y en vivo.
             </p>
           </div>
-          <div class="modality-time">
+          <div className="modality-time">
             <h4>Part-time</h4>
             <p>
               Diseñada exclusivamente para aquellos que quieren aprender

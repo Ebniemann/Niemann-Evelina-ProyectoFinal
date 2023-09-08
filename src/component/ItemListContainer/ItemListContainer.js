@@ -4,37 +4,29 @@ import Loading from "../Loading/Loading";
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ({ greeting }) => {
-  const [loading, setLoading] = useState(true);
-  const [selectProduct, setSelectProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [courses, setCourses] = useState([]);
 
   const orderProduct = () => {
     return new Promise((resolve) => {
-      resolve(data);
+      setTimeout(() => {
+        resolve(data);
+      }, 1500);
     });
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      orderProduct().then((res) => {
+    setLoading(true);
+    orderProduct()
+      .then((res) => {
         setCourses(res);
-      });
-    }, 1500);
+      })
+      .finally(() => setLoading(false));
   }, []);
   return (
     <>
       <h2>{greeting}</h2>
-      {loading ? (
-        <Loading />
-      ) : (
-        <ItemList
-          courses={courses}
-          loading={false}
-          selectProduct={selectProduct}
-          setSelectProduct={setSelectProduct}
-        />
-      )}
+      {loading ? <Loading /> : <ItemList courses={courses} loading={loading} />}
     </>
   );
 };
