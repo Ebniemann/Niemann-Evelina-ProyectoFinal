@@ -39,26 +39,24 @@ const ItemCount = ({ initial, stock, productAdd, courseName }) => {
   };
 
   return (
-    <>
-      <div className="buyCourse">
-        <button
-          className="buttonAdd"
-          onClick={() => productAdd(quantity)}
-          disabled={!stock}
-        >
-          Agregar al carrito
+    <div className="buyCourse">
+      <button
+        className="buttonAdd"
+        onClick={() => productAdd(quantity)}
+        disabled={!stock}
+      >
+        Agregar al carrito
+      </button>
+      <div className="quantity">
+        <button className="quantityAction" onClick={decrement}>
+          -
         </button>
-        <div className="quantity">
-          <button className="quantityAction" onClick={decrement}>
-            -
-          </button>
-          <p>{quantity}</p>
-          <button className="quantityAction" onClick={increment}>
-            +
-          </button>
-        </div>
+        <p>{quantity}</p>
+        <button className="quantityAction" onClick={increment}>
+          +
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 export default ItemCount;

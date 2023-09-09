@@ -8,8 +8,10 @@ const ItemList = ({ courses }) => {
       <div className="itemList">
         {courses.map((course) => (
           <div className="box-card" key={course.id}>
-            <div className="card-header">{course.name}</div>
-            <Link to={`/cursos/${course.id}`}>Ver carrera</Link>
+            <div className="box-title">{course.name}</div>
+            <Link className="link" to={`/cursos/${course.id}`}>
+              Detalle
+            </Link>
             <ItemCount
               initial={1}
               stock={3}

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./PgageHome/home";
 import Courses from "./PageCourses/courses";
 import Faqs from "./PageFaqs/Faqs";
-import ProductsContainer from "./component/ProductsContainer/ProductsContainer";
+import ProductsContainer from "./component/DetailContainer/DetailContainer";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 .buyCourse{
   display: flex;
   justify-content: space-between;
-  margin: 0px 7px 0px 7px;
+  margin-top: 60px;
 }
 .buttonAdd{
   text-decoration: none;
