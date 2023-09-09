@@ -1,10 +1,6 @@
 .itemList{
   display: flex;
-  justify-content: space-around;
-  padding:30px 0px 30px 0px ;
-  background-color: #1A1A1A;
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 26 26/var(--tw-bg-opacity));
+  justify-content: space-around;  
 }
 
 .box-card{

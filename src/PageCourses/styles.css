@@ -1,10 +1,4 @@
-.presentation{
-  height: 540px;
-  display: flex;
-  background-color: #1A1A1A;
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 26 26/var(--tw-bg-opacity));
-}
+
 .description{
   margin: 25px 95px 0px 95px;
 }

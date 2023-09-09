@@ -1,0 +1,19 @@
+.ItemListContainer{
+  padding: 65px 0px 65px 0px;
+  background-color: #1A1A1A;
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 26/var(--tw-bg-opacity));
+  background-image: url(https://assets.soyhenry.com/henry-landing/assets/shapes/shapesHowApply.png);
+  background-repeat: no-repeat;
+  background-position: right;
+
+}
+
+.ItemListContainer h2{
+  color: white;
+  font-size: 65px;
+  text-align: center;
+  z-index: 2;
+
+}
+

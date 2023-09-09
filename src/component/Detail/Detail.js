@@ -20,6 +20,7 @@ const Detail = ({ courses }) => {
               ))}
             </ul>
           )}
+          <h5 className="card-title">Tiempo de cursada:</h5>
           <p>{courses.number_weeks} semanas / 2 clases semanales</p>
           <span className="price">${courses.price}</span>
         </div>

@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   padding: 15px 0px 0px 35px;
+  background-image: url(https://assets.soyhenry.com/henry-landing/assets/shapes/shapesHowApply.png);
+  background-repeat: no-repeat;
+  background-position: right;
 
 }
 .a{
@@ -13,6 +16,14 @@
   margin: 0 auto; 
 }
 
+.card-header{
+  font-size: 35px;
+    text-align: center;
+    
+}
+.card-title{
+  font-size: 25px;
+}
 .card-list{
   display: flex;
   flex-direction: column;
