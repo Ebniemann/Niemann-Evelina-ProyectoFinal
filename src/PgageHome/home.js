@@ -19,7 +19,7 @@ const Home = () => {
       </section>
       <section className="modality">
         <h2>Elige tu carrera</h2>
-        <p>¿ Full o Part ?</p>
+        <h3>¿ Full o Part ?</h3>
         <div className="subrayado"></div>
         <div className="times">
           <div className="modality-time">

@@ -21,6 +21,7 @@ img{
   background-image: url(https://assets.soyhenry.com/henry-landing/assets/shapes/shapesHowApply.png);
   background-repeat: no-repeat;
   background-position: right;
+  font-family: 'PT Sans', sans-serif;
 }
 
   h2 {
@@ -29,6 +30,16 @@ img{
     letter-spacing: 2px;
     text-align: center;
     margin-bottom: 5px;
+  }
+  h3{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 75px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 2px;
   }
 
   .subrayado {
@@ -45,17 +56,6 @@ img{
   .times {
     display: flex;
     justify-content: space-around;
-  }
-
-  p {
-    font-family: 'PT Sans', sans-serif;
-    position: relative;
-    margin-bottom: 75px;
-    text-align: center;
-    font-size: 45px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    z-index: 2;
   }
 
   .modality-time {
