@@ -5,16 +5,26 @@ import ItemDetail from "../Detail/Detail";
 
 const DetailContainer = () => {
   const [loading, setLoading] = useState(true);
-  const [courses, setCourses] = useState([]);
+  const [course, setCourse] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    const courseData = data.find((item) => item.id === Number(id));
-    setCourses(courseData);
-    setLoading(false);
+    setTimeout(() => {
+      const courseData = data.find((item) => item.id === Number(id));
+      setCourse(courseData);
+      setLoading(false);
+    }, 1500);
   }, [id]);
 
-  return <>{loading ? <p>Cargando...</p> : <ItemDetail courses={courses} />}</>;
+  return (
+    <>
+      {loading ? (
+        <span className="loader"></span>
+      ) : (
+        <ItemDetail courses={course} />
+      )}
+    </>
+  );
 };
 
 export default DetailContainer;
