@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./PgageHome/home";
-import Courses from "./PageCourses/courses";
-import Faqs from "./PageFaqs/Faqs";
+import Home from "./PgageHome/PageHome";
+import Courses from "./PageCourses/PageCourses";
+import Faqs from "./PageFaqs/PageFaqs";
 import ProductsContainer from "./component/DetailContainer/DetailContainer";
 
 function App() {
