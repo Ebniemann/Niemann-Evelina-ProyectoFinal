@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .ItemListContainer{
   padding: 65px 0px 65px 0px;
   background-color: #1A1A1A;
@@ -17,3 +18,26 @@
 
 }
 
+=======
+.categories{
+  background-color: #1A1A1A;
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 26/var(--tw-bg-opacity));
+}
+.coursesTitle{
+  color: white;
+  font-size: 30px;
+}
+
+.tabs{
+
+  display: flex;
+    justify-content: space-around;
+}
+a{
+  text-decoration: none;
+  color: #1A1A1A;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+}
+>>>>>>> segundaPreEntrega

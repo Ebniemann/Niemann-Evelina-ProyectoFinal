@@ -3,6 +3,7 @@
  [
     {
       "id": 1,
+      "category":"producto",
       "name": "Product Web",
       "price": 1000,
       "amount": 1,
@@ -12,6 +13,7 @@
     },
     {
       "id": 2,
+      "category":"producto",
       "name": "Product",
       "price": 2000,
       "amount": 1,
@@ -21,6 +23,7 @@
     },
     {
       "id": 3,
+      "category":"programacion",
       "name": "Desarrollo de aplicaciones",
       "price": 3000,
       "amount": 1,
@@ -30,6 +33,7 @@
     },
     {
       "id": 4,
+      "category":"programacion",
       "name": "Desarrollo Full Stack",
       "price": 4000,
       "amount": 1,
