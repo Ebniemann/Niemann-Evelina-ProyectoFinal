@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import "./styles.css";
-import data from "../../data/data.json";
-=======
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { getProducts, categoryId } from "../../PedirDatos/PedirDatos";
 import "./styles.css";
->>>>>>> segundaPreEntrega
 import Loading from "../Loading/Loading";
 import ItemList from "../ItemList/ItemList";
 
