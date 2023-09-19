@@ -3,7 +3,7 @@ import coursesImg from "../Assest/img/Img-presentation/carrera-home.png";
 import Layout from "../component/Layout/Layout";
 import Title from "../component/Title/Title";
 import SubTitle from "../component/SubTitle/SubTitle";
-import ItemList from "../component/ItemListContainer/ItemListContainer";
+import ItemListContainer from "../component/ItemListContainer/ItemListContainer";
 import { ToastContainer } from "react-toastify";
 
 const CoursesPage = () => {
@@ -26,7 +26,7 @@ const CoursesPage = () => {
           height={500}
         />
       </section>
-      <ItemList greeting={"Carreras"} />
+      <ItemListContainer greeting={"Carreras"} />
       <ToastContainer />
     </Layout>
   );
