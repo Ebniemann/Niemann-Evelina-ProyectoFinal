@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemList = ({ courses }) => {
+  const handleProductAdd = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <div className="itemList">
@@ -14,7 +18,6 @@ const ItemList = ({ courses }) => {
             </Link>
             <ItemCount
               initial={1}
-              stock={3}
               productAdd={(quantity) =>
                 console.log("producto agregado", quantity)
               }

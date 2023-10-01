@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "../../data/data.json";
 import ItemDetail from "../Detail/Detail";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const DetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -9,11 +10,17 @@ const DetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      const courseData = data.find((item) => item.id === Number(id));
-      setCourse(courseData);
-      setLoading(false);
-    }, 1500);
+    setLoading();
+    const docCourse = doc(db, "courses", id);
+
+    getDoc(docCourse)
+      .then((resp) => {
+        setCourse({ id: resp.id, ...resp.data() });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setLoading(false));
   }, [id]);
 
   return (
@@ -21,7 +28,7 @@ const DetailContainer = () => {
       {loading ? (
         <span className="loader"></span>
       ) : (
-        <ItemDetail courses={course} />
+        course && <ItemDetail courses={course} />
       )}
     </>
   );

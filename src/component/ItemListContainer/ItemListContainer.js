@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { getProducts, categoryId } from "../../PedirDatos/PedirDatos";
 import "./styles.css";
 import Loading from "../Loading/Loading";
 import ItemList from "../ItemList/ItemList";
+
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(false);
@@ -12,16 +14,27 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     setLoading(true);
-    const asyncFunc = async () => {
-      try {
-        const res = await (category ? categoryId(category) : getProducts());
-        setCourses(res);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const course = collection(db, "courses");
 
-    asyncFunc();
+    const q = category
+      ? query(course, where("category", "==", category))
+      : course;
+
+    getDocs(q)
+      .then((resp) => {
+        setCourses(
+          resp.docs.map((doc) => {
+            return {
+              ...doc.data(),
+              id: doc.id,
+            };
+          })
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => setLoading(false));
   }, [category]);
 
   return (

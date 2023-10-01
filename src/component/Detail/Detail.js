@@ -15,8 +15,8 @@ const Detail = ({ courses }) => {
           </h5>
           {courses.course_list && (
             <ul className="card-list">
-              {courses.course_list.map((course, index) => (
-                <li key={index}>{course}</li>
+              {courses.course_list.map((courses, index) => (
+                <li key={index}>{courses}</li>
               ))}
             </ul>
           )}
