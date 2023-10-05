@@ -4,7 +4,6 @@ import Layout from "../component/Layout/Layout";
 import Title from "../component/Title/Title";
 import SubTitle from "../component/SubTitle/SubTitle";
 import ItemListContainer from "../component/ItemListContainer/ItemListContainer";
-import { ToastContainer } from "react-toastify";
 
 const CoursesPage = () => {
   return (
@@ -27,7 +26,6 @@ const CoursesPage = () => {
         />
       </section>
       <ItemListContainer greeting={"Carreras"} />
-      <ToastContainer />
     </Layout>
   );
 };

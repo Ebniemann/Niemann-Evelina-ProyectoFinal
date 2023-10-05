@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./styles.css";
 import volver from "../../Assest/img/Iconos/izquierda.png";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../Context/CartProvider";
+import { ToastContainer } from "react-toastify";
 
 const Detail = ({ courses }) => {
+  const [quantityAdd, setQuantityAdd] = useState(0);
   const { addCourse } = useContext(CartContext);
 
   const handleAddToCart = (number) => {
+    setQuantityAdd(number);
     addCourse(courses, number);
   };
 
@@ -37,13 +40,18 @@ const Detail = ({ courses }) => {
           <span className="price">${courses.price}</span>
         </div>
 
-        <ItemCount
-          initial={1}
-          stock={courses.stock}
-          productAdd={handleAddToCart}
-          courseName={courses.name}
-        />
+        {quantityAdd > 0 ? (
+          <Link to="/cart">Carrito</Link>
+        ) : (
+          <ItemCount
+            initial={1}
+            stock={courses.stock}
+            productAdd={handleAddToCart}
+            courseName={courses.name}
+          />
+        )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
