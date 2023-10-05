@@ -1,12 +1,7 @@
 import "./styles.css";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
 
 const ItemList = ({ courses }) => {
-  const handleProductAdd = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <div className="itemList">
@@ -16,13 +11,6 @@ const ItemList = ({ courses }) => {
             <Link className="link" to={`/cursos/${course.id}`}>
               Detalle
             </Link>
-            <ItemCount
-              initial={1}
-              productAdd={(quantity) =>
-                console.log("producto agregado", quantity)
-              }
-              courseName={course.name}
-            />
           </div>
         ))}
       </div>

@@ -1,9 +1,9 @@
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
-import BuyCart from "../BuyCart/BuyCart";
+import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../Assest/img/logo/logo.png";
 
-const NavBar = ({ children }) => {
+const NavBar = () => {
   return (
     <nav className="nav-bar">
       <Link to="/" className="logo">
@@ -16,9 +16,10 @@ const NavBar = ({ children }) => {
         <NavLink className="li" to="/faqs">
           FAQs
         </NavLink>
-        {children}
       </ul>
-      <BuyCart width={25} height={25} />
+      <NavLink to="/cart">
+        <CartWidget />
+      </NavLink>
     </nav>
   );
 };

@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import "./styles.css";
 import volver from "../../Assest/img/Iconos/izquierda.png";
+import ItemCount from "../ItemCount/ItemCount";
+import { CartContext } from "../Context/CartProvider";
+
 const Detail = ({ courses }) => {
+  const { addCourse } = useContext(CartContext);
+
+  const handleAddToCart = (number) => {
+    addCourse(courses, number);
+  };
+
   return (
     <div className="detail">
       <Link to="/cursos">
@@ -26,6 +36,13 @@ const Detail = ({ courses }) => {
           </p>
           <span className="price">${courses.price}</span>
         </div>
+
+        <ItemCount
+          initial={1}
+          stock={courses.stock}
+          productAdd={handleAddToCart}
+          courseName={courses.name}
+        />
       </div>
     </div>
   );

@@ -34,15 +34,18 @@ const ItemCount = ({ initial, stock, productAdd, courseName }) => {
         progress: undefined,
         theme: "dark",
       });
-      console.log("Decrement clicked. New quantity:", quantity);
     }
+  };
+
+  const handleProductAdd = () => {
+    productAdd(quantity);
   };
 
   return (
     <div className="buyCourse">
       <button
         className="buttonAdd"
-        onClick={() => productAdd(quantity)}
+        onClick={handleProductAdd}
         disabled={!stock}
       >
         Agregar al carrito
