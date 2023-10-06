@@ -6,6 +6,7 @@ import Faqs from "./PageFaqs/PageFaqs";
 import ProductsContainer from "./component/DetailContainer/DetailContainer";
 import CartProvider from "./component/Context/CartProvider";
 import Cart from "./component/Cart/Cart";
+import Checkout from "./component/Checkout/checkout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/cursos/:id" element={<ProductsContainer />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
