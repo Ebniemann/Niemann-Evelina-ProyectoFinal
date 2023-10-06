@@ -54,11 +54,13 @@ const Checkout = () => {
   return (
     <div>
       {orderId !== "" ? (
-        <>
+        <div className="congratulation">
           <h2>🎉🎉 Felicitaciones por su compra 🎉🎉</h2>
           <h3>Su N° de orden es: {orderId}</h3>
-          <Link to="/">E-task</Link>
-        </>
+          <Link className="fill" to="/">
+            Ir a Home
+          </Link>
+        </div>
       ) : (
         <div className="checkout">
           <SubTitle text={"Datos para orden de compra"} />

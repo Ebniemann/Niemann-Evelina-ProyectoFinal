@@ -1,0 +1,23 @@
+.cart{
+  margin: 15px;
+}
+
+.widge{
+  display: flex;
+  justify-content: end;
+}
+
+.total{
+  text-align: end;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.option{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.emptyCart{
+  text-align: center;
+}

@@ -41,7 +41,9 @@ const Detail = ({ courses }) => {
         </div>
 
         {quantityAdd > 0 ? (
-          <Link to="/cart">Carrito</Link>
+          <Link className="fill" to="/cart">
+            Ver Carrito
+          </Link>
         ) : (
           <ItemCount
             initial={1}
