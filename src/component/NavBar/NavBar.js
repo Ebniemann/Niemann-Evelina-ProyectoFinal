@@ -9,7 +9,7 @@ const NavBar = () => {
       <Link to="/" className="logo">
         <img src={Logo} alt="logo" width={100}></img>
       </Link>
-      <ul>
+      <ul className="navLink">
         <NavLink className="li" to="/cursos">
           Cursos
         </NavLink>
@@ -17,7 +17,7 @@ const NavBar = () => {
           FAQs
         </NavLink>
       </ul>
-      <NavLink to="/cart">
+      <NavLink className="navLink" to="/cart">
         <CartWidget />
       </NavLink>
     </nav>

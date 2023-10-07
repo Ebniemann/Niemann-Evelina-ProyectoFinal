@@ -13,11 +13,6 @@ export const getItem = (id) => {
   return getDoc(courses);
 };
 
-//export const getItems = () => {
-//const items = collection(db, "courses");
-// return getDocs(items);
-//};
-
 export const getItems = (category) => {
   const items = query(
     collection(db, "courses"),

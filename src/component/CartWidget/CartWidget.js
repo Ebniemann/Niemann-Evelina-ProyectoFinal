@@ -8,9 +8,9 @@ const CartWidget = () => {
   const { cartQuantity } = useContext(CartContext);
 
   return (
-    <div>
+    <div className="cartWidget">
       <img src={ImgCart} alt="carrito" width={25} height={25}></img>
-      {cartQuantity() > 0 && <span id="counter">{cartQuantity()}</span>}
+      {cartQuantity() > 0 && <span>{cartQuantity()}</span>}
     </div>
   );
 };

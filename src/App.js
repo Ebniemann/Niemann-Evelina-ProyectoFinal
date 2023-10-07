@@ -7,6 +7,7 @@ import ProductsContainer from "./component/DetailContainer/DetailContainer";
 import CartProvider from "./component/Context/CartProvider";
 import Cart from "./component/Cart/Cart";
 import Checkout from "./component/Checkout/checkout";
+import Page404 from "./Page404/Page404";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

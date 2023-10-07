@@ -1,11 +1,24 @@
 .cart{
-  margin: 15px;
+ 
+}
+.titleDetail{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  margin-bottom:20px;
 }
 
-.widge{
-  display: flex;
-  justify-content: end;
+.titleDetail p{
+  text-align: center;
+  margin: 0;
 }
+.titleDetail h3{
+  margin: 0;
+  text-align: start;
+}
+
+.orderCart{
+    margin: 30px 35px 0px;
+  }
 
 .total{
   text-align: end;

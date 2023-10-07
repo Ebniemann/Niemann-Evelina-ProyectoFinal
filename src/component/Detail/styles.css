@@ -43,4 +43,8 @@
   font-weight: bold;
 }
 
+.card-body {
+  margin-bottom: 60px;
+}
+
 

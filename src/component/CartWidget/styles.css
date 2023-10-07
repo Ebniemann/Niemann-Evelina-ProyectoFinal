@@ -1,11 +1,11 @@
-.cart-container{
+.cartWidget{
   display: flex;
+  align-items: center;
 }
 
-.cart-container p{
-  margin: 0;
+
+
+.cartWidget img{
+  margin-right: 5px;
 }
 
-.cart-container p{
-  color: yellow;
-}

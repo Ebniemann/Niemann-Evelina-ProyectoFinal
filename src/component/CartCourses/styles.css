@@ -1,18 +1,26 @@
+
+
 .cartCourses{
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  justify-items: start;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom:20px;
 
 }
 
 .cartCourses p{
   font-size: 18px;
-  margin: 0;
+  text-align: center;
+
 
 }
 
 .cartCourses h5{
   margin: 0;
+}
+
+.cartCourses button{
+  text-decoration: none;
+  background-color: transparent;
+  border: transparent;
 }
