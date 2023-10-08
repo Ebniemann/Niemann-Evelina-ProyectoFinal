@@ -1,55 +1,85 @@
 import "./styles.css";
-import SubTitle from "../SubTitle/SubTitle";
 import { Link } from "react-router-dom";
-import { db } from "../../firebase/config";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../../firebaseConfig/config";
+import {
+  addDoc,
+  collection,
+  Timestamp,
+  writeBatch,
+  query,
+  getDocs,
+  where,
+  documentId,
+} from "firebase/firestore";
 import { CartContext } from "../Context/CartProvider";
 import { useContext, useState } from "react";
+import CheckoutForm from "../Checkoutform/ChekoutForm";
 
 const Checkout = () => {
-  const [user, setUser] = useState({});
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
   const { cartItem, total, clearCart } = useContext(CartContext);
 
-  const buyer = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const sendOrder = (e) => {
-    e.preventDefault();
-    const newErrors = [];
-
-    if (!user.name) {
-      newErrors.push("Ingrese su nombre");
-    }
-    if (!user.phone) {
-      newErrors.push("Ingrese su teléfono");
-    }
-    if (!user.email) {
-      newErrors.push("Ingrese su email");
-    } else if (!user.email || user.email !== user.confirmEmail) {
-      newErrors.push("Los email no coinciden");
-    } else {
-      let order = {
-        user,
-        item: cartItem,
-        total: total(),
-        date: serverTimestamp(),
+  const sendOrder = async ({ name, phone, email }) => {
+    setLoading(true);
+    try {
+      const totalValue = total().toFixed(2);
+      const parsedTotal = parseFloat(totalValue);
+      const objOrder = {
+        buyer: {
+          name,
+          phone,
+          email,
+        },
+        items: cartItem,
+        total: parsedTotal,
+        date: Timestamp.fromDate(new Date()),
       };
-      const sale = collection(db, "orders");
-      addDoc(sale, order)
-        .then((res) => {
-          setOrderId(res.id);
-          clearCart();
-        })
-        .catch((error) => console.log(error));
+
+      const batch = writeBatch(db);
+      const outOfStock = [];
+
+      const ids = cartItem.map((prod) => prod.id);
+      const productsRef = collection(db, "items");
+      const productsAddedFormFirestore = await getDocs(
+        query(productsRef, where(documentId(), "in", ids))
+      );
+
+      const { docs } = productsAddedFormFirestore;
+      docs.forEach((doc) => {
+        const dataDoc = doc.data();
+        const stockDb = dataDoc.stock;
+
+        const productAddedToCart = cartItem.find((prod) => prod.id === doc.id);
+        const prodQuantity = productAddedToCart?.quantity;
+
+        if (stockDb >= prodQuantity) {
+          batch.update(doc.ref, { stock: stockDb - prodQuantity });
+        } else {
+          outOfStock.push({ id: doc.id, ...dataDoc });
+        }
+      });
+
+      if (outOfStock.length === 0) {
+        await batch.commit();
+        const orderRef = collection(db, "orders");
+        const orderAdded = await addDoc(orderRef, objOrder);
+
+        setOrderId(orderAdded.id);
+        clearCart();
+      } else {
+        console.error("Hay productos que están fuera de stock");
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
     }
-    setError(newErrors);
   };
+
+  if (loading) {
+    return <p>Estamos cargando su compra</p>;
+  }
 
   return (
     <div>
@@ -63,62 +93,7 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="checkout">
-          <SubTitle text={"Datos para orden de compra"} />
-          <form user={user} onSubmit={sendOrder}>
-            <div className="mb-3">
-              <label className="form-label">Nombre y Apellido</label>
-              <input
-                onChange={buyer}
-                type="text"
-                className="form-control"
-                name="name"
-                placeholder="Evelina Niemann"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Teléfono</label>
-              <input
-                onChange={buyer}
-                type="number"
-                className="form-control"
-                name="phone"
-                placeholder="11-1111-1111"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Email</label>
-              <input
-                onChange={buyer}
-                type="email"
-                className="form-control"
-                name="email"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Confirmar email</label>
-              <input
-                onChange={buyer}
-                type="email"
-                className="form-control"
-                name="confirmEmail"
-                placeholder="name@example.com"
-              />
-            </div>
-            <button className="btn btn-danger" type="submit">
-              Comprar
-            </button>
-          </form>
-          {error.length > 0 && (
-            <div className="error">
-              {error.map((error, index) => (
-                <>
-                  <span key={index}>{error}</span>
-                  <br />
-                </>
-              ))}
-            </div>
-          )}
+          <CheckoutForm onConfirm={sendOrder} />
         </div>
       )}
     </div>

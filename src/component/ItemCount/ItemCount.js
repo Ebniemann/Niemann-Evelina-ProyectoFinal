@@ -43,13 +43,6 @@ const ItemCount = ({ initial, stock, productAdd, courseName }) => {
 
   return (
     <div className="buyCourse">
-      <button
-        className="buttonAdd"
-        onClick={handleProductAdd}
-        disabled={!stock}
-      >
-        Agregar al carrito
-      </button>
       <div className="quantity">
         <button className="quantityAction" onClick={decrement}>
           -
@@ -59,6 +52,13 @@ const ItemCount = ({ initial, stock, productAdd, courseName }) => {
           +
         </button>
       </div>
+      <button
+        className="buttonAdd"
+        onClick={handleProductAdd}
+        disabled={!stock}
+      >
+        Agregar al carrito
+      </button>
     </div>
   );
 };
