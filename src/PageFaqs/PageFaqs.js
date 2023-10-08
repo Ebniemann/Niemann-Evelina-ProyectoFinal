@@ -1,7 +1,6 @@
 import "./styles.css";
 import Layout from "../component/Layout/Layout";
 import Title from "../component/Title/Title";
-import Form from "../component/Form/Form";
 
 const Faqs = () => {
   return (
@@ -91,7 +90,6 @@ const Faqs = () => {
             </div>
           </div>
         </div>
-        <Form />
       </div>
     </Layout>
   );
