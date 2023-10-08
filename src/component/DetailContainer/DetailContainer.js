@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../Detail/Detail";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase/config";
+import { getItem } from "../../firebaseConfig/services";
 
 const DetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -11,9 +10,8 @@ const DetailContainer = () => {
 
   useEffect(() => {
     setLoading();
-    const docCourse = doc(db, "courses", id);
 
-    getDoc(docCourse)
+    getItem(id)
       .then((resp) => {
         setCourse({ id: resp.id, ...resp.data() });
       })
